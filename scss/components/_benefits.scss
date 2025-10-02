@@ -1,0 +1,44 @@
+@use '../utils/variables' as *;
+
+.benefits {
+  padding-top: 94px;
+  padding-bottom: 94px;
+  background-color: $color-bg;
+
+  &__container { display: flex; align-items: baseline; }
+  &__list      { display: flex; gap: 30px; }
+
+  &__title {
+    color: $titles-color;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    padding-bottom: 10px;
+
+    &::before {
+      content: "";
+      display: block;
+      margin-bottom: 30px;
+      height: 120px;
+      border-radius: 4px;
+      background-color: $background-team;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 64px 64px;
+    }
+  }
+
+  &__title.antena::before   { background-image: url("../imgs/main-page/antenna.jpg"); }
+  &__title.clock::before    { background-image: url("../imgs/main-page/clock.jpg"); }
+  &__title.diagrama::before { background-image: url("../imgs/main-page/diagram.jpg"); }
+  &__title.astronaut::before{ background-image: url("../imgs/main-page/astronaut.jpg"); }
+
+  &__desc {
+    color: $desc-color;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: .03em;
+  }
+}

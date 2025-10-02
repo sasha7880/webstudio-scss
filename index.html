@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Studio</title>
+  <link href="./css/main.css" rel="stylesheet" />
+      <link rel="stylesheet" href="./css/style.css">
+
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+</head>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    AOS.init({
+      once: true,
+      duration: 700,
+      easing: 'ease-out',
+      offset: 80,
+      anchorPlacement: 'top-bottom'
+    });
+  });
+</script>
+
+<body>
+  <!-- HEADER START -->
+  <header class="header">
+    <div class="container header__container">
+      <div class="header__wrapper">
+        <a href="index.html" class="header__logo" data-aos="zoom-in-right">Web<span
+            class="header__logo__span">Studio</span></a>
+        <nav class="header__nav" data-aos="zoom-in-down">
+          <ul class="header__nav__list">
+            <li class="header__navigation__item">
+              <a href="index.html" class="header__item__link current__page animation">Студія</a>
+            </li>
+            <li class="header__nav__item">
+              <a href="portfolio.html" class="header__item__link animation">Портфоліо</a>
+            </li>
+            <li class="header__nav__item">
+              <a href="" class="header__item__link animation">Контакти</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <ul class="header__list">
+        <li class="header__item">
+          <a href="mailto:@devstudio.com" class="header__link animation"><svg class="header__icon">
+              <use href="./icons/icon-gmail.svg"></use>
+            </svg>info@devstudio.com</a>
+        </li>
+        <li class="header__item">
+          <a href="tel:+380961111111" class="header__link animation"><svg class="header__icon">
+              <use href="./icons/icon-smartphone.svg"></use>
+            </svg>+38 096 111 11 11</a>
+        </li>
+      </ul>
+    </div>
+    </section>
+  </header>
+  <!-- HEADER END-->
+
+  <!-- HERO START -->
+  <main>
+    <section class="hero">
+      <div class="container hero__container">
+        <h1 class="hero__title" data-aos="zoom-in-down">
+          Ефективні рішення для <br />
+          вашого бізнесу
+        </h1>
+        <button type="button" class="hero__button" data-modal-open data-aos="zoom-out-up">Замовити послугу</button>
+        <div class="backdrop is__hidden" data-modal>
+          <div class="hero__modal">
+            <button class="hero__modal__close__btn" type="button" data-modal-close>
+              <svg class="close__icon">
+                <use href="./icons/icon-close.svg"></use>
+              </svg>
+            </button>
+            <h2 class="hero__modal__title title">Залиште свої дані, ми вам передзвонимо</h2>
+            <form class="hero__modal__form">
+              <label class="hero__modal__label">
+                Ім'я
+                <input type="text" class="hero__modal__input man" />
+                <svg class="hero__modal__label__icon">
+                  <use href=".name"></use>
+                </svg>
+              </label>
+              <label class="hero__modal__label">
+                Телефон
+                <input type="tel" class="hero__modal__input phone" />
+                <svg class="hero__modal__label__icon phone">
+                  <use href="phone"></use>
+                </svg>
+              </label>
+              <label class="hero__modal__label">
+                Пошта
+                <input class="hero__modal__input email" type="email" />
+                <svg class="hero__modal__label__icon e__mail">
+                  <use href="e-mail"></use>
+                </svg>
+              </label>
+              <label class="hero__modal__label">
+                Коментар
+                <textarea placeholder="Введіть текст" class="hero__modal__textarea"></textarea>
+              </label>
+            </form>
+            <div class="hero__modal__wrapper">
+              <input type="checkbox" class="hero__modal__checkbox" />
+              <p class="hero__modal__desc">
+                Погоджуюся з розсилкою та приймаю
+                <a href="" class="hero__modal__desc__link">Умови договору</a>
+              </p>
+            </div>
+            <button type="submit" class="hero__modal__btn">Відправити</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- !H E R O  E N D -->
+
+    <section class="benefits">
+      <div class="container benefits__container">
+        <ul class="benefits__list" data-aos="zoom-out-up">
+          <li class="benefits__item">
+            <article class="benefits__article">
+              <h3 class="benefits__title antena">Увага до деталей</h3>
+              <p class="benefits__desc">
+                Ідейні міркування, і навіть початок <br />
+                повсякденної роботи з формування <br />
+                позиції.
+              </p>
+            </article>
+          </li>
+          <li class="benefits__item">
+            <article class="benefits__article">
+              <h3 class="benefits__title clock">Пунктуальність</h3>
+              <p class="benefits__desc">
+                Завдання організації, особливо рамки <br />
+                і місце навчання кадрів тягне у себе
+              </p>
+            </article>
+          </li>
+          <li class="benefits__item">
+            <article class="benefits__article">
+              <h3 class="benefits__title diagrama">Планування</h3>
+              <p class="benefits__desc">
+                Так само консультація з широким <br />
+                активом значною мірою зумовлює
+              </p>
+            </article>
+          </li>
+          <li class="benefits__item">
+            <article class="benefits__article">
+              <h3 class="benefits__title astronaut">Сучасні технології</h3>
+              <p class="benefits__desc">
+                Значимість цих проблем настільки <br />
+                очевидна, що реалізація планових <br />
+                завдань
+              </p>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- BENEFITS END-->
+
+    <section class="doing">
+      <div class="container doing__container">
+        <h2 class="doing__title" data-aos="zoom-out-up">Чим ми займаємося</h2>
+        <ul class="doing__list">
+          <li class="doing__item" data-aos="zoom-out-right">
+            <div class="doing__overlay">
+              <p class="doing__desc">Десктопні додатки</p>
+            </div>
+            <img src="./imgs/main-page/first-man-coding.png" alt="coding one" width="370" height="294"
+              class="doing__img" />
+          </li>
+          <li class="doing__item" data-aos="zoom-in-up">
+            <div class="doing__overlay">
+              <p class="doing__desc">Мобільні додатки</p>
+            </div>
+            <img src="./imgs/main-page/man-coding.png" alt="coding two" width="370" height="294" class="doing__img" />
+          </li>
+          <li class="doing__item" data-aos="zoom-out-left">
+            <div class="doing__overlay">
+              <p class="doing__desc">Дизайнерські рішення</p>
+            </div>
+            <img src="./imgs/main-page/man-choosing-color.png" alt="design" width="370" height="294"
+              class="doing__img" />
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!--! DOING END-->
+
+    <section class="team">
+      <div class="container team__container">
+        <h2 class="doing__title" data-aos="zoom-out-up">Наша команда</h2>
+        <ul class="team__list">
+          <li class="team__item" data-aos="zoom-in-right">
+            <img class="team__img" src="./imgs/main-page/igor.jpg" alt="Ігор" />
+            <h4 class="team__subtitle">Ігор Дем'яненко</h4>
+            <p class="team__desc">Product Designer</p>
+            <ul class="team__item__list">
+              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg
+                    class="team__icon animation">
+                    <use href="./icons/icon-instagram.svg"></use>
+                  </svg></a></li>
+              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg
+                    class="team__icon animation">
+                    <use href="./icons/icon-facebook.svg"></use>
+                  </svg></a></li>
+              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg
+                    class="team__icon animation">
+                    <use href="./icons/icon-twitter.svg"></use>
+                  </svg></a></li>
+              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg
+                    class="team__icon animation">
+                    <use href="./icons/icon-linkedin.svg"></use>
+                  </svg></a></li>
+            </ul>
+          </li>
+          <li class="team__item" data-aos="zoom-in-right">
+            <img class="team__img" src="./imgs/main-page/olga.jpg" alt="Ольга" />
+            <h4 class="team__subtitle">Ольга Рєпіна</h4>
+            <p class="team__desc">Frontend Developer</p>
+            <ul class="team__item__list">
+              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg
+                    class="team__icon animation">
+                    <use href="./icons/icon-instagram.svg"></use>
+                  </svg></a></li>
+              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg
+                    class="team__icon animation">
+                    <use href="./icons/icon-facebook.svg"></use>
+                  </svg></a></li>
+              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg
+                    class="team__icon animation">
+                    <use href="./icons/icon-twitter.svg"></use>
+                  </svg></a></li>
+              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg
+                    class="team__icon animation">
+                    <use href="./icons/icon-linkedin.svg"></use>
+                  </svg></a></li>
+            </ul>
+          </li>
+          <li class="team__item" data-aos="zoom-in-left">
+            <img class="team__img" src="./imgs/main-page/mykola.jpg" alt="Микола" />
+            <h4 class="team__subtitle">Микола Тарасов</h4>
+            <p class="team__desc">Marketing</p>
+            <ul class="team__item__list">
+              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg
+                    class="team__icon animation">
+                    <use href="./icons/icon-instagram.svg"></use>
+                  </svg></a></li>
+              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg
+                    class="team__icon animation">
+                    <use href="./icons/icon-facebook.svg"></use>
+                  </svg></a></li>
+              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg
+                    class="team__icon animation">
+                    <use href="./icons/icon-twitter.svg"></use>
+                  </svg></a></li>
+              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg
+                    class="team__icon animation">
+                    <use href="./icons/icon-linkedin.svg"></use>
+                  </svg></a></li>
+            </ul>
+          </li>
+          <li class="team__item" data-aos="zoom-in-left">
+            <img class="team__img" src="./imgs/main-page/mykhailo.jpg" alt="Михайло" />
+            <h4 class="team__subtitle">Михайло Єрмаков</h4>
+            <p class="team__desc">UI Designer</p>
+            <ul class="team__item__list">
+              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg
+                    class="team__icon animation">
+                    <use href="./icons/icon-instagram.svg"></use>
+                  </svg></a></li>
+              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg
+                    class="team__icon animation">
+                    <use href="./icons/icon-facebook.svg"></use>
+                  </svg></a></li>
+              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg
+                    class="team__icon animation">
+                    <use href="./icons/icon-twitter.svg"></use>
+                  </svg></a></li>
+              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg
+                    class="team__icon animation">
+                    <use href="./icons/icon-linkedin.svg"></use>
+                  </svg></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="clients">
+      <div class="container">
+        <h2 class="clients__title title doing__title" data-aos="zoom-in-up">Постійні клієнти</h2>
+        <ul class="clients__list">
+          <li class="clients__item" data-aos="zoom-out-up"><a href="" class="clients__item__link animation"><svg
+                class="clients__item__icon animation"><use href="./icons/icon-logo-one.svg"></use></svg></a></li>
+          <li class="clients__item" data-aos="zoom-out-up"><a href="" class="clients__item__link animation"><svg
+                class="clients__item__icon animation"><use href="./icons/icon-logo-two.svg"></use></svg></a></li>
+          <li class="clients__item" data-aos="zoom-out-up"><a href="" class="clients__item__link animation"><svg
+                class="clients__item__icon animation"><use href="./icons/icon-logo-three.svg"></use></svg></a></li>
+          <li class="clients__item" data-aos="zoom-out-up"><a href="" class="clients__item__link animation"><svg
+                class="clients__item__icon animation"><use href="./icons/icon-logo-four.svg"></use></svg></a></li>
+          <li class="clients__item" data-aos="zoom-out-up"><a href="" class="clients__item__link animation"><svg
+                class="clients__item__icon animation"><use href="./icons/icon-logo-five.svg"></use></svg></a></li>
+          <li class="clients__item" data-aos="zoom-out-up"><a href="" class="clients__item__link animation"><svg
+                class="clients__item__icon animation"><use href="./icons/icon-logo-six.svg"></use></svg></a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <!-- TEAM END -->
+
+  <footer class="footer">
+    <div class="container footer__container" data-aos="zoom-in">
+      <div class="left__part__footer__wrapper">
+        <div class="footer__address__wrapper">
+          <a href="index.html" class="footer__logo">Web<span class="footer__logo__span">Studio</span></a>
+          <!-- !Дані, адреса -->
+          <address class="footer__address">
+            <ul class="footer__address__list">
+              <li class="footer__address__item">м. Київ, пр-т Лесі Українки, 26</li>
+              <li class="footer__address__item">
+                <a href="mailto:@devstudio.com" class="footer__address__link">info@devstudio.com</a>
+              </li>
+              <li class="footer__address__item">
+                <a href="tel:+380961111111" class="footer__address__link">+38 096 111 11 11</a>
+              </li>
+            </ul>
+          </address>
+        </div>
+        <div class="footer__wrapper">
+            <h3 class="footer__list__title">ПРИЄДНУЙТЕСЬ</h3>
+            <ul class="footer__list">
+              <li class="footer__item"><a href="" class="footer__link animation"><svg class="footer__icon">
+                    <use href="./icons/icon-instagram.svg"></use>
+                  </svg></a></li>
+              <li class="footer__item"><a href="" class="footer__link animation"><svg class="footer__icon">
+                    <use href="./icons/icon-twitter.svg"></use>
+                  </svg></a></li>
+              <li class="footer__item"><a href="" class="footer__link animation"><svg class="footer__icon">
+                    <use href="./icons/icon-facebook.svg"></use>
+                  </svg></a></li>
+              <li class="footer__item"><a href="" class="footer__link animation"><svg class="footer__icon">
+                    <use href="./icons/icon-linkedin.svg"></use>
+                  </svg></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__form__wrapper">
+          <h3 class="footer__form__title">Підпишіться на розсилку</h3>
+          <form class="footer__form">
+            <label class="footer__from__label">
+              <input type="email" class="footer__form__input" placeholder="E-mail">
+            </label>
+            <button type="submit" class="footer__form__button">Підписатися <svg class="footer__form__btn__icon">
+                <use href="./icons/icon-send.svg"></use>
+              </svg></button>
+          </form>
+        </div>
+      </div>
+    </footer>
+    <!-- FOOTER END -->
+<script>
+(() => {
+  const openBtn  = document.querySelector('[data-modal-open]');
+  const closeBtn = document.querySelector('[data-modal-close]');
+  const backdrop = document.querySelector('[data-modal]');
+
+  if (!openBtn || !backdrop) return;
+
+  const toggle = () => {
+    backdrop.classList.toggle('is__hidden');
+    document.body.classList.toggle('no__scroll');
+  };
+
+  openBtn.addEventListener('click', toggle);
+  closeBtn?.addEventListener('click', toggle);
+
+  backdrop.addEventListener('click', (e) => {
+    if (e.target === backdrop) toggle();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !backdrop.classList.contains('is__hidden')) {
+      toggle();
+    }
+  });
+})();
+</script>
+
+
+</body>
+
+</html>

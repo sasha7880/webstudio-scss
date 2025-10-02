@@ -1,0 +1,17 @@
+@use '../utils/variables' as *;
+
+* { box-sizing: border-box; }
+
+body {
+  color: $color-muted;
+  background-color: $color-bg;
+  font-family: $font-base;
+}
+
+a { text-decoration: none; }
+ul { list-style: none; }
+
+.container {
+  width: 1170px; 
+  margin: 0 auto;
+}
