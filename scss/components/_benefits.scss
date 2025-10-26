@@ -29,10 +29,10 @@
     }
   }
 
-  &__title.antena::before   { background-image: url("../imgs/main-page/antenna.jpg"); }
-  &__title.clock::before    { background-image: url("../imgs/main-page/clock.jpg"); }
-  &__title.diagrama::before { background-image: url("../imgs/main-page/diagram.jpg"); }
-  &__title.astronaut::before{ background-image: url("../imgs/main-page/astronaut.jpg"); }
+  &__title.antena::before   { background-image: url("../imgs/desktop/main-page/antenna.jpg"); }
+  &__title.clock::before    { background-image: url("../imgs/desktop/main-page/clock.jpg"); }
+  &__title.diagrama::before { background-image: url("../imgs/desktop/main-page/diagram.jpg"); }
+  &__title.astronaut::before{ background-image: url("../imgs/desktop/main-page/astronaut.jpg"); }
 
   &__desc {
     color: $desc-color;

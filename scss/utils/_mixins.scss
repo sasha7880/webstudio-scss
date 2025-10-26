@@ -7,3 +7,21 @@
     font-size: $font-size;
     line-height: $line-height;
 }
+
+@mixin bg-retina($img-1x, $img-2x) {
+  background-image: url(#{$img-1x});
+
+  @media (min-device-pixel-ratio: 2),
+         (min-resolution: 192dpi),
+         (min-resolution: 2dppx) {
+    background-image: url(#{$img-2x});
+  }
+}
+
+@mixin bg-src($folder, $name, $ext: 'jpg') {
+  @include bg-retina(
+    "../imgs/#{$folder}/main-page/#{$name}.#{$ext}",
+    "../imgs/#{$folder}/main-page/#{$name}@2x.#{$ext}"
+  );
+}
+

@@ -1,7 +1,8 @@
 @use '../utils/variables' as *;
+@use '../utils/mixins' as mix;
 
 .hero {
-  background: linear-gradient(to right, $hero-overlay, $hero-overlay), url(../imgs/main-page/hero.jpg) center / cover no-repeat;
+  background: linear-gradient(to right, $hero-overlay, $hero-overlay), url(../imgs/desktop/main-page/hero.jpg) center / cover no-repeat;
   padding-top: 200px;
   padding-bottom: 200px;
 
@@ -209,4 +210,19 @@
 
 .phone {
   top: 166px;
+}
+.hero{
+  background-image:
+    linear-gradient(to right, rgba(47,48,58,.4), rgba(47,48,58,.4)),
+    url("../imgs/desktop/main-page/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  @include mix.bg-src(mobile, hero, jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @media (min-width: $bp-tablet)  { @include mix.bg-src(tablet,  hero, jpg); }
+  @media (min-width: $bp-desktop) { @include mix.bg-src(desktop, hero, jpg); }
 }

@@ -1,6 +1,7 @@
 @use '../utils/variables' as *;
 
 .footer {
+  [data-aos] { opacity: 1; }
   background-color: $footer-background;
   padding-top: 60px;
   padding-bottom: 60px;

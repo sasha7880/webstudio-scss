@@ -1,0 +1,131 @@
+:root {
+  --anim-dur: 700ms;
+  --anim-ease: cubic-bezier(.2, .7, .2, 1);
+  --anim-offset: 0px 0px -20% 0px;
+}
+
+[data-aos] {
+  opacity: 0;
+  will-change: opacity, transform, filter;
+}
+
+[data-aos].is-animated {
+  animation-fill-mode: both;
+  animation-duration: var(--anim-dur);
+  animation-timing-function: var(--anim-ease);
+}
+
+
+@keyframes kfZoomInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-24px) scale(.98);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+@keyframes kfZoomInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(24px) scale(.98);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+@keyframes kfZoomInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-24px) scale(.98);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+@keyframes kfZoomOutUp {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) scale(1.04);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+@keyframes kfZoomOutRight {
+  0% {
+    opacity: 0;
+    transform: translateX(24px) scale(1.04);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+@keyframes kfZoomInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) scale(.98);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+@keyframes kfZoomOutLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-24px) scale(1.04);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+@keyframes kfFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+    filter: blur(1px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+
+[data-aos="fade-up"].is-animated        { animation-name: kfFadeUp; }
+[data-aos="zoom-in-right"].is-animated  { animation-name: kfZoomInRight; }
+[data-aos="zoom-in-left"].is-animated   { animation-name: kfZoomInLeft; }
+[data-aos="zoom-in-down"].is-animated   { animation-name: kfZoomInDown; }
+[data-aos="zoom-out-up"].is-animated    { animation-name: kfZoomOutUp; }
+[data-aos="zoom-out-right"].is-animated { animation-name: kfZoomOutRight; }
+[data-aos="zoom-in-up"].is-animated     { animation-name: kfZoomInUp; }
+[data-aos="zoom-out-left"].is-animated  { animation-name: kfZoomOutLeft; }
