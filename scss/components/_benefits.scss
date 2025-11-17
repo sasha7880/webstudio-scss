@@ -5,8 +5,15 @@
   padding-bottom: 94px;
   background-color: $color-bg;
 
-  &__container { display: flex; align-items: baseline; }
-  &__list      { display: flex; gap: 30px; }
+  &__container {
+    display: flex;
+    align-items: baseline;
+  }
+
+  &__list {
+    display: flex;
+    gap: 30px;
+  }
 
   &__title {
     color: $titles-color;
@@ -22,17 +29,25 @@
       margin-bottom: 30px;
       height: 120px;
       border-radius: 4px;
-      background-color: $background-team;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 64px 64px;
+      background: $background-team no-repeat center / 64px 64px;
     }
   }
 
-  &__title.antena::before   { background-image: url("../imgs/desktop/main-page/antenna.jpg"); }
-  &__title.clock::before    { background-image: url("../imgs/desktop/main-page/clock.jpg"); }
-  &__title.diagrama::before { background-image: url("../imgs/desktop/main-page/diagram.jpg"); }
-  &__title.astronaut::before{ background-image: url("../imgs/desktop/main-page/astronaut.jpg"); }
+  &__title.antena::before {
+    background-image: url("../imgs/desktop/main-page/antenna.png");
+  }
+
+  &__title.clock::before {
+    background-image: url("../imgs/desktop/main-page/clock.png");
+  }
+
+  &__title.diagrama::before {
+    background-image: url("../imgs/desktop/main-page/diagram.png");
+  }
+
+  &__title.astronaut::before {
+    background-image: url("../imgs/desktop/main-page/astronaut.png");
+  }
 
   &__desc {
     color: $desc-color;

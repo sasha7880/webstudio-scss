@@ -9,12 +9,11 @@
   <link href="./css/main.css" rel="stylesheet" />
   <link rel="stylesheet" href="./css/style.css">
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet" />
 </head>
 
 <body>
-  <!-- HEADER START -->
   <header class="header">
     <div class="container header__container">
       <div class="header__wrapper">
@@ -33,23 +32,28 @@
           </ul>
         </nav>
       </div>
+
       <ul class="header__list">
         <li class="header__item">
-          <a href="mailto:@devstudio.com" class="header__link animation"><svg class="header__icon">
-              <use href="./icons/icon-gmail.svg"></use>
-            </svg>info@devstudio.com</a>
+          <a href="mailto:@devstudio.com" class="header__link animation">
+            <svg class="header__icon" aria-hidden="true">
+              <use href="./icons/symbol-defs.svg#icon-gmail"></use>
+            </svg>
+            info@devstudio.com
+          </a>
         </li>
         <li class="header__item">
-          <a href="tel:+380961111111" class="header__link animation"><svg class="header__icon">
-              <use href="./icons/icon-smartphone.svg"></use>
-            </svg>+38 096 111 11 11</a>
+          <a href="tel:+380961111111" class="header__link animation">
+            <svg class="header__icon" aria-hidden="true">
+              <use href="./icons/symbol-defs.svg#icon-smartphone"></use>
+            </svg>
+            +38 096 111 11 11
+          </a>
         </li>
       </ul>
     </div>
   </header>
-  <!-- HEADER END-->
 
-  <!-- HERO START (фон через CSS) -->
   <main>
     <section class="hero">
       <div class="container hero__container">
@@ -61,9 +65,9 @@
 
         <div class="backdrop is__hidden" data-modal>
           <div class="hero__modal">
-            <button class="hero__modal__close__btn" type="button" data-modal-close>
-              <svg class="close__icon">
-                <use href="./icons/icon-close.svg"></use>
+            <button class="hero__modal__close__btn" type="button" data-modal-close aria-label="Закрити">
+              <svg class="close__icon" aria-hidden="true">
+                <use href="./icons/symbol-defs.svg#icon-close"></use>
               </svg>
             </button>
 
@@ -73,24 +77,24 @@
               <label class="hero__modal__label">
                 Ім'я
                 <input type="text" class="hero__modal__input man" />
-                <svg class="hero__modal__label__icon">
-                  <use href=".name"></use>
+                <svg class="hero__modal__label__icon" aria-hidden="true">
+                  <use href="./icons/symbol-defs.svg#icon-name"></use>
                 </svg>
               </label>
 
               <label class="hero__modal__label">
                 Телефон
                 <input type="tel" class="hero__modal__input phone" />
-                <svg class="hero__modal__label__icon phone">
-                  <use href="phone"></use>
+                <svg class="hero__modal__label__icon phone" aria-hidden="true">
+                  <use href="./icons/symbol-defs.svg#icon-phone"></use>
                 </svg>
               </label>
 
               <label class="hero__modal__label">
                 Пошта
                 <input class="hero__modal__input email" type="email" />
-                <svg class="hero__modal__label__icon e__mail">
-                  <use href="e-mail"></use>
+                <svg class="hero__modal__label__icon e__mail" aria-hidden="true">
+                  <use href="./icons/symbol-defs.svg#icon-e-mail"></use>
                 </svg>
               </label>
 
@@ -98,24 +102,22 @@
                 Коментар
                 <textarea placeholder="Введіть текст" class="hero__modal__textarea"></textarea>
               </label>
+
+              <div class="hero__modal__wrapper">
+                <input type="checkbox" class="hero__modal__checkbox" />
+                <p class="hero__modal__desc">
+                  Погоджуюся з розсилкою та приймаю
+                  <a href="" class="hero__modal__desc__link">Умови договору</a>
+                </p>
+              </div>
+
+              <button type="submit" class="hero__modal__btn">Відправити</button>
             </form>
-
-            <div class="hero__modal__wrapper">
-              <input type="checkbox" class="hero__modal__checkbox" />
-              <p class="hero__modal__desc">
-                Погоджуюся з розсилкою та приймаю
-                <a href="" class="hero__modal__desc__link">Умови договору</a>
-              </p>
-            </div>
-
-            <button type="submit" class="hero__modal__btn">Відправити</button>
           </div>
         </div>
       </div>
     </section>
-    <!-- !H E R O  E N D -->
 
-    <!-- BENEFITS START -->
     <section class="benefits">
       <div class="container benefits__container">
         <ul class="benefits__list" data-aos="zoom-out-up">
@@ -163,9 +165,7 @@
         </ul>
       </div>
     </section>
-    <!-- BENEFITS END-->
 
-    <!-- DOING START -->
     <section class="doing">
       <div class="container doing__container">
         <h2 class="doing__title" data-aos="zoom-out-up">Чим ми займаємося</h2>
@@ -177,16 +177,9 @@
             </div>
 
             <picture class="doing__img">
-              <!-- Desktop -->
-              <source media="(min-width: 1200px)"
-                srcset="./imgs/desktop/main-page/first-man-coding.png 1x, ./imgs/desktop/main-page/first-man-coding@2x.png 2x" />
-              <!-- Tablet -->
-              <source media="(min-width: 768px)"
-                srcset="./imgs/tablet/main-page/first-man-coding.png 1x, ./imgs/tablet/main-page/first-man-coding@2x.png 2x" />
-              <!-- Mobile -->
-              <img src="./imgs/mobile/first-man-coding.png"
-                   srcset="./imgs/mobile/main-page/first-man-coding.png 1x, ./imgs/mobile/main-page/first-man-coding@2x.png 2x"
-                   alt="Десктопні додатки" width="370" height="294" loading="lazy" />
+              <source media="(min-width: 1200px)" srcset="./imgs/desktop/main-page/first-man-coding.png, ./imgs/desktop/main-page/first-man-coding@2x.png" />
+              <source media="(min-width: 768px)" srcset="./imgs/tablet/main-page/first-man-coding.png, ./imgs/tablet/main-page/first-man-coding@2x.png" />
+              <img src="./imgs/mobile/first-man-coding.png" alt="Десктопні додатки" width="370" height="294" loading="lazy" />
             </picture>
           </li>
 
@@ -196,13 +189,9 @@
             </div>
 
             <picture class="doing__img">
-              <source media="(min-width: 1200px)"
-                srcset="./imgs/desktop/main-page/man-coding.png 1x, ./imgs/desktop/main-page/man-coding@2x.png 2x" />
-              <source media="(min-width: 768px)"
-                srcset="./imgs/tablet/main-page/man-coding.png 1x, ./imgs/tablet/main-page/man-coding@2x.png 2x" />
-              <img src="./imgs/mobile/man-coding.png"
-                   srcset="./imgs/mobile/main-page/man-coding.png 1x, ./imgs/mobile/main-page/man-coding@2x.png 2x"
-                   alt="Мобільні додатки" width="370" height="294" loading="lazy" />
+              <source media="(min-width: 1200px)" srcset="./imgs/desktop/main-page/man-coding.png, ./imgs/desktop/main-page/man-coding@2x.png" />
+              <source media="(min-width: 768px)" srcset="./imgs/tablet/main-page/man-coding.png, ./imgs/tablet/main-page/man-coding@2x.png" />
+              <img src="./imgs/mobile/man-coding.png" alt="Мобільні додатки" width="370" height="294" loading="lazy" />
             </picture>
           </li>
 
@@ -212,21 +201,15 @@
             </div>
 
             <picture class="doing__img">
-              <source media="(min-width: 1200px)"
-                srcset="./imgs/desktop/main-page/man-choosing-color.png 1x, ./imgs/desktop/main-page/man-choosing-color@2x.png 2x" />
-              <source media="(min-width: 768px)"
-                srcset="./imgs/tablet/main-page/man-choosing-color.png 1x, ./imgs/tablet/main-page/man-choosing-color@2x.png 2x" />
-              <img src="./imgs/mobile/man-choosing-color.png"
-                   srcset="./imgs/mobile/main-page/man-choosing-color.png 1x, ./imgs/mobile/main-page/man-choosing-color@2x.png 2x"
-                   alt="Дизайнерські рішення" width="370" height="294" loading="lazy" />
+              <source media="(min-width: 1200px)" srcset="./imgs/desktop/main-page/man-choosing-color.png, ./imgs/desktop/main-page/man-choosing-color@2x.png" />
+              <source media="(min-width: 768px)" srcset="./imgs/tablet/main-page/man-choosing-color.png, ./imgs/tablet/main-page/man-choosing-color@2x.png" />
+              <img src="./imgs/mobile/man-choosing-color.png" alt="Дизайнерські рішення" width="370" height="294" loading="lazy" />
             </picture>
           </li>
         </ul>
       </div>
     </section>
-    <!-- DOING END-->
 
-    <!-- TEAM START -->
     <section class="team">
       <div class="container team__container">
         <h2 class="doing__title" data-aos="zoom-out-up">Наша команда</h2>
@@ -234,108 +217,218 @@
         <ul class="team__list">
           <li class="team__item" data-aos="zoom-in-right">
             <picture>
-              <source media="(min-width: 1200px)"
-                srcset="./imgs/desktop/main-page/igor.jpg 1x, ./imgs/desktop/main-page/igor@2x.jpg 2x" />
-              <source media="(min-width: 768px)"
-                srcset="./imgs/tablet/main-page/igor.jpg 1x, ./imgs/tablet/main-page/igor@2x.jpg 2x" />
-              <img class="team__img"
-                   src="./imgs/mobile/igor.jpg"
-                   srcset="./imgs/mobile/main-page/igor.jpg 1x, ./imgs/mobile/main-page/igor@2x.jpg 2x"
-                   alt="Ігор Дем'яненко" width="270" height="260" loading="lazy" />
+              <source media="(min-width: 1200px)" srcset="./imgs/desktop/main-page/igor.jpg, ./imgs/desktop/main-page/igor@2x.jpg" />
+              <source media="(min-width: 768px)" srcset="./imgs/tablet/main-page/igor.jpg, ./imgs/tablet/main-page/igor@2x.jpg" />
+              <img class="team__img" src="./imgs/mobile/igor.jpg" alt="Ігор Дем'яненко" width="270" height="260" loading="lazy" />
             </picture>
             <h4 class="team__subtitle">Ігор Дем'яненко</h4>
             <p class="team__desc">Product Designer</p>
             <ul class="team__item__list">
-              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg class="team__icon animation"><use href="./icons/icon-instagram.svg"></use></svg></a></li>
-              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg class="team__icon animation"><use href="./icons/icon-facebook.svg"></use></svg></a></li>
-              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg class="team__icon animation"><use href="./icons/icon-twitter.svg"></use></svg></a></li>
-              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg class="team__icon animation"><use href="./icons/icon-linkedin.svg"></use></svg></a></li>
+              <li class="team__item__list__item animation">
+                <a href="" class="team__item__link">
+                  <svg class="team__icon animation" aria-hidden="true">
+                    <use href="./icons/symbol-defs.svg#icon-instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="team__item__list__item animation">
+                <a href="" class="team__item__link">
+                  <svg class="team__icon animation" aria-hidden="true">
+                    <use href="./icons/symbol-defs.svg#icon-facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="team__item__list__item animation">
+                <a href="" class="team__item__link">
+                  <svg class="team__icon animation" aria-hidden="true">
+                    <use href="./icons/symbol-defs.svg#icon-twitter"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="team__item__list__item animation">
+                <a href="" class="team__item__link">
+                  <svg class="team__icon animation" aria-hidden="true">
+                    <use href="./icons/symbol-defs.svg#icon-linkedin"></use>
+                  </svg>
+                </a>
+              </li>
             </ul>
           </li>
 
           <li class="team__item" data-aos="zoom-in-right">
             <picture>
-              <source media="(min-width: 1200px)"
-                srcset="./imgs/desktop/main-page/olga.jpg 1x, ./imgs/desktop/main-page/olga@2x.jpg 2x" />
-              <source media="(min-width: 768px)"
-                srcset="./imgs/tablet/main-page/olga.jpg 1x, ./imgs/tablet/main-page/olga@2x.jpg 2x" />
-              <img class="team__img"
-                   src="./imgs/mobile/olga.jpg"
-                   srcset="./imgs/mobile/main-page/olga.jpg 1x, ./imgs/mobile/main-page/olga@2x.jpg 2x"
-                   alt="Ольга Рєпіна" width="270" height="260" loading="lazy" />
+              <source media="(min-width: 1200px)" srcset="./imgs/desktop/main-page/olga.jpg, ./imgs/desktop/main-page/olga@2x.jpg" />
+              <source media="(min-width: 768px)" srcset="./imgs/tablet/main-page/olga.jpg, ./imgs/tablet/main-page/olga@2x.jpg" />
+              <img class="team__img" src="./imgs/mobile/olga.jpg" alt="Ольга Рєпіна" width="270" height="260" loading="lazy" />
             </picture>
             <h4 class="team__subtitle">Ольга Рєпіна</h4>
             <p class="team__desc">Frontend Developer</p>
             <ul class="team__item__list">
-              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg class="team__icon animation"><use href="./icons/icon-instagram.svg"></use></svg></a></li>
-              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg class="team__icon animation"><use href="./icons/icon-facebook.svg"></use></svg></a></li>
-              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg class="team__icon animation"><use href="./icons/icon-twitter.svg"></use></svg></a></li>
-              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg class="team__icon animation"><use href="./icons/icon-linkedin.svg"></use></svg></a></li>
+              <li class="team__item__list__item animation">
+                <a href="" class="team__item__link">
+                  <svg class="team__icon animation" aria-hidden="true">
+                    <use href="./icons/symbol-defs.svg#icon-instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="team__item__list__item animation">
+                <a href="" class="team__item__link">
+                  <svg class="team__icon animation" aria-hidden="true">
+                    <use href="./icons/symbol-defs.svg#icon-facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="team__item__list__item animation">
+                <a href="" class="team__item__link">
+                  <svg class="team__icon animation" aria-hidden="true">
+                    <use href="./icons/symbol-defs.svg#icon-twitter"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="team__item__list__item animation">
+                <a href="" class="team__item__link">
+                  <svg class="team__icon animation" aria-hidden="true">
+                    <use href="./icons/symbol-defs.svg#icon-linkedin"></use>
+                  </svg>
+                </a>
+              </li>
             </ul>
           </li>
 
           <li class="team__item" data-aos="zoom-in-left">
             <picture>
-              <source media="(min-width: 1200px)"
-                srcset="./imgs/desktop/main-page/mykola.jpg 1x, ./imgs/desktop/main-page/mykola@2x.jpg 2x" />
-              <source media="(min-width: 768px)"
-                srcset="./imgs/tablet/main-page/mykola.jpg 1x, ./imgs/tablet/main-page/mykola@2x.jpg 2x" />
-              <img class="team__img"
-                   src="./imgs/mobile/mykola.jpg"
-                   srcset="./imgs/mobile/main-page/mykola.jpg 1x, ./imgs/mobile/main-page/mykola@2x.jpg 2x"
-                   alt="Микола Тарасов" width="270" height="260" loading="lazy" />
+              <source media="(min-width: 1200px)" srcset="./imgs/desktop/main-page/mykola.jpg, ./imgs/desktop/main-page/mykola@2x.jpg" />
+              <source media="(min-width: 768px)" srcset="./imgs/tablet/main-page/mykola.jpg, ./imgs/tablet/main-page/mykola@2x.jpg" />
+              <img class="team__img" src="./imgs/mobile/mykola.jpg" alt="Микола Тарасов" width="270" height="260" loading="lazy" />
             </picture>
             <h4 class="team__subtitle">Микола Тарасов</h4>
             <p class="team__desc">Marketing</p>
             <ul class="team__item__list">
-              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg class="team__icon animation"><use href="./icons/icon-instagram.svg"></use></svg></a></li>
-              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg class="team__icon animation"><use href="./icons/icon-facebook.svg"></use></svg></a></li>
-              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg class="team__icon animation"><use href="./icons/icon-twitter.svg"></use></svg></a></li>
-              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg class="team__icon animation"><use href="./icons/icon-linkedin.svg"></use></svg></a></li>
+              <li class="team__item__list__item animation">
+                <a href="" class="team__item__link">
+                  <svg class="team__icon animation" aria-hidden="true">
+                    <use href="./icons/symbol-defs.svg#icon-instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="team__item__list__item animation">
+                <a href="" class="team__item__link">
+                  <svg class="team__icon animation" aria-hidden="true">
+                    <use href="./icons/symbol-defs.svg#icon-facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="team__item__list__item animation">
+                <a href="" class="team__item__link">
+                  <svg class="team__icon animation" aria-hidden="true">
+                    <use href="./icons/symbol-defs.svg#icon-twitter"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="team__item__list__item animation">
+                <a href="" class="team__item__link">
+                  <svg class="team__icon animation" aria-hidden="true">
+                    <use href="./icons/symbol-defs.svg#icon-linkedin"></use>
+                  </svg>
+                </a>
+              </li>
             </ul>
           </li>
 
           <li class="team__item" data-aos="zoom-in-left">
             <picture>
-              <source media="(min-width: 1200px)"
-                srcset="./imgs/desktop/main-page/mykhailo.jpg 1x, ./imgs/desktop/main-page/mykhailo@2x.jpg 2x" />
-              <source media="(min-width: 768px)"
-                srcset="./imgs/tablet/main-page/mykhailo.jpg 1x, ./imgs/tablet/main-page/mykhailo@2x.jpg 2x" />
-              <img class="team__img"
-                   src="./imgs/mobile/mykhailo.jpg"
-                   srcset="./imgs/mobile/main-page/mykhailo.jpg 1x, ./imgs/mobile/main-page/mykhailo@2x.jpg 2x"
-                   alt="Михайло Єрмаков" width="270" height="260" loading="lazy" />
+              <source media="(min-width: 1200px)" srcset="./imgs/desktop/main-page/mykhailo.jpg, ./imgs/desktop/main-page/mykhailo@2x.jpg" />
+              <source media="(min-width: 768px)" srcset="./imgs/tablet/main-page/mykhailo.jpg, ./imgs/tablet/main-page/mykhailo@2x.jpg" />
+              <img class="team__img" src="./imgs/mobile/mykhailo.jpg" alt="Михайло Єрмаков" width="270" height="260" loading="lazy" />
             </picture>
             <h4 class="team__subtitle">Михайло Єрмаков</h4>
             <p class="team__desc">UI Designer</p>
             <ul class="team__item__list">
-              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg class="team__icon animation"><use href="./icons/icon-instagram.svg"></use></svg></a></li>
-              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg class="team__icon animation"><use href="./icons/icon-facebook.svg"></use></svg></a></li>
-              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg class="team__icon animation"><use href="./icons/icon-twitter.svg"></use></svg></a></li>
-              <li class="team__item__list__item animation"><a href="" class="team__item__link"><svg class="team__icon animation"><use href="./icons/icon-linkedin.svg"></use></svg></a></li>
+              <li class="team__item__list__item animation">
+                <a href="" class="team__item__link">
+                  <svg class="team__icon animation" aria-hidden="true">
+                    <use href="./icons/symbol-defs.svg#icon-instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="team__item__list__item animation">
+                <a href="" class="team__item__link">
+                  <svg class="team__icon animation" aria-hidden="true">
+                    <use href="./icons/symbol-defs.svg#icon-facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="team__item__list__item animation">
+                <a href="" class="team__item__link">
+                  <svg class="team__icon animation" aria-hidden="true">
+                    <use href="./icons/symbol-defs.svg#icon-twitter"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="team__item__list__item animation">
+                <a href="" class="team__item__link">
+                  <svg class="team__icon animation" aria-hidden="true">
+                    <use href="./icons/symbol-defs.svg#icon-linkedin"></use>
+                  </svg>
+                </a>
+              </li>
             </ul>
           </li>
         </ul>
       </div>
     </section>
-    <!-- TEAM END -->
 
     <section class="clients">
       <div class="container">
         <h2 class="clients__title title doing__title" data-aos="zoom-in-up">Постійні клієнти</h2>
         <ul class="clients__list">
-          <li class="clients__item" data-aos="zoom-out-up"><a href="" class="clients__item__link animation"><svg class="clients__item__icon animation"><use href="./icons/icon-logo-one.svg"></use></svg></a></li>
-          <li class="clients__item" data-aos="zoom-out-up"><a href="" class="clients__item__link animation"><svg class="clients__item__icon animation"><use href="./icons/icon-logo-two.svg"></use></svg></a></li>
-          <li class="clients__item" data-aos="zoom-out-up"><a href="" class="clients__item__link animation"><svg class="clients__item__icon animation"><use href="./icons/icon-logo-three.svg"></use></svg></a></li>
-          <li class="clients__item" data-aos="zoom-out-up"><a href="" class="clients__item__link animation"><svg class="clients__item__icon animation"><use href="./icons/icon-logo-four.svg"></use></svg></a></li>
-          <li class="clients__item" data-aos="zoom-out-up"><a href="" class="clients__item__link animation"><svg class="clients__item__icon animation"><use href="./icons/icon-logo-five.svg"></use></svg></a></li>
-          <li class="clients__item" data-aos="zoom-out-up"><a href="" class="clients__item__link animation"><svg class="clients__item__icon animation"><use href="./icons/icon-logo-six.svg"></use></svg></a></li>
+          <li class="clients__item" data-aos="zoom-out-up">
+            <a href="" class="clients__item__link animation">
+              <svg class="clients__item__icon animation" aria-hidden="true">
+                <use href="./icons/symbol-defs.svg#icon-logo-one"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="clients__item" data-aos="zoom-out-up">
+            <a href="" class="clients__item__link animation">
+              <svg class="clients__item__icon animation" aria-hidden="true">
+                <use href="./icons/symbol-defs.svg#icon-logo-two"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="clients__item" data-aos="zoom-out-up">
+            <a href="" class="clients__item__link animation">
+              <svg class="clients__item__icon animation" aria-hidden="true">
+                <use href="./icons/symbol-defs.svg#icon-logo-three"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="clients__item" data-aos="zoom-out-up">
+            <a href="" class="clients__item__link animation">
+              <svg class="clients__item__icon animation" aria-hidden="true">
+                <use href="./icons/symbol-defs.svg#icon-logo-four"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="clients__item" data-aos="zoom-out-up">
+            <a href="" class="clients__item__link animation">
+              <svg class="clients__item__icon animation" aria-hidden="true">
+                <use href="./icons/symbol-defs.svg#icon-logo-five"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="clients__item" data-aos="zoom-out-up">
+            <a href="" class="clients__item__link animation">
+              <svg class="clients__item__icon animation" aria-hidden="true">
+                <use href="./icons/symbol-defs.svg#icon-logo-six"></use>
+              </svg>
+            </a>
+          </li>
         </ul>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer__container" data-aos="zoom-in">
       <div class="left__part__footer__wrapper">
@@ -358,10 +451,34 @@
         <div class="footer__wrapper">
           <h3 class="footer__list__title">ПРИЄДНУЙТЕСЬ</h3>
           <ul class="footer__list">
-            <li class="footer__item"><a href="" class="footer__link animation"><svg class="footer__icon"><use href="./icons/icon-instagram.svg"></use></svg></a></li>
-            <li class="footer__item"><a href="" class="footer__link animation"><svg class="footer__icon"><use href="./icons/icon-twitter.svg"></use></svg></a></li>
-            <li class="footer__item"><a href="" class="footer__link animation"><svg class="footer__icon"><use href="./icons/icon-facebook.svg"></use></svg></a></li>
-            <li class="footer__item"><a href="" class="footer__link animation"><svg class="footer__icon"><use href="./icons/icon-linkedin.svg"></use></svg></a></li>
+            <li class="footer__item">
+              <a href="" class="footer__link animation">
+                <svg class="footer__icon" aria-hidden="true">
+                  <use href="./icons/symbol-defs.svg#icon-instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="footer__item">
+              <a href="" class="footer__link animation">
+                <svg class="footer__icon" aria-hidden="true">
+                  <use href="./icons/symbol-defs.svg#icon-twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="footer__item">
+              <a href="" class="footer__link animation">
+                <svg class="footer__icon" aria-hidden="true">
+                  <use href="./icons/symbol-defs.svg#icon-facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="footer__item">
+              <a href="" class="footer__link animation">
+                <svg class="footer__icon" aria-hidden="true">
+                  <use href="./icons/symbol-defs.svg#icon-linkedin"></use>
+                </svg>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -374,7 +491,9 @@
           </label>
           <button type="submit" class="footer__form__button">
             Підписатися
-            <svg class="footer__form__btn__icon"><use href="./icons/icon-send.svg"></use></svg>
+            <svg class="footer__form__btn__icon" aria-hidden="true">
+              <use href="./icons/symbol-defs.svg#icon-send"></use>
+            </svg>
           </button>
         </form>
       </div>
@@ -398,8 +517,8 @@
 
             const d = el.getAttribute('data-aos-duration');
             const delay = el.getAttribute('data-aos-delay');
-            if (d) el.style.animationDuration = `${parseInt(d,10)}ms`;
-            if (delay) el.style.animationDelay = `${parseInt(delay,10)}ms`;
+            if (d) el.style.animationDuration = `${parseInt(d, 10)}ms`;
+            if (delay) el.style.animationDelay = `${parseInt(delay, 10)}ms`;
 
             if (once) io.unobserve(el);
           }
@@ -407,6 +526,27 @@
       }, { root: null, rootMargin, threshold: 0.15 });
 
       items.forEach(el => io.observe(el));
+    })();
+  </script>
+
+  <script>
+    (() => {
+      const openBtn = document.querySelector('[data-modal-open]');
+      const closeBtn = document.querySelector('[data-modal-close]');
+      const backdrop = document.querySelector('[data-modal]');
+
+      if (!openBtn || !closeBtn || !backdrop) return;
+
+      function toggleModal() {
+        backdrop.classList.toggle('is__hidden');
+      }
+
+      openBtn.addEventListener('click', toggleModal);
+      closeBtn.addEventListener('click', toggleModal);
+
+      backdrop.addEventListener('click', (e) => {
+        if (e.target === backdrop) toggleModal();
+      });
     })();
   </script>
 </body>

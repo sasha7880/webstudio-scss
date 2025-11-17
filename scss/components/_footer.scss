@@ -29,9 +29,27 @@
   &__address {
     padding-top: 20px;
 
-    &__list { display: flex; flex-direction: column; gap: 9px; }
-    &__item { color: $light-txt-color; font-size: 14px; font-weight: 400; line-height: 21px; letter-spacing: .03em; }
-    &__link { color: $footer-text; font-size: 14px; line-height: 24px; font-weight: 400; letter-spacing: .03em; }
+    &__list { 
+      display: flex; 
+      flex-direction: column; 
+      gap: 9px; 
+    }
+
+    &__item { 
+      color: $light-txt-color; 
+      font-size: 14px; 
+      font-weight: 400; 
+      line-height: 1.71;        
+      letter-spacing: .03em; 
+    }
+
+    &__link { 
+      color: $footer-text; 
+      font-size: 14px; 
+      line-height: 1.71;        
+      font-weight: 400; 
+      letter-spacing: .03em; 
+    }
   }
 
   &__wrapper { padding-top: 12px; }
@@ -40,7 +58,13 @@
     display: flex;
     gap: 10px;
 
-    &__title { color: $light-txt-color; font-size: 14px; font-weight: 700; letter-spacing: .03px; padding-bottom: 20px; }
+    &__title { 
+      color: $light-txt-color; 
+      font-size: 14px; 
+      font-weight: 700; 
+      letter-spacing: .03px; 
+      padding-bottom: 20px; 
+    }
   }
 
   &__link {
@@ -56,14 +80,26 @@
     }
   }
 
-  &__icon { fill: $light-txt-color; height: 20px; width: 20px; }
+  &__icon { 
+    fill: $light-txt-color; 
+    height: 20px; 
+    width: 20px; 
+  }
 
   &__form {
     display: flex;
     gap: 12px;
 
     &__wrapper { padding-top: 12px; }
-    &__title { padding-bottom: 20px; color: $light-txt-color; font-size: 14px; text-transform: uppercase; letter-spacing: .03em; font-weight: 700; }
+
+    &__title { 
+      padding-bottom: 20px; 
+      color: $light-txt-color; 
+      font-size: 14px; 
+      text-transform: uppercase; 
+      letter-spacing: .03em; 
+      font-weight: 700; 
+    }
 
     &__input {
       border: 1px solid rgba(255, 255, 255, .3);
@@ -97,8 +133,13 @@
       display: flex;
       gap: 10px;
       align-items: center;
+      cursor: pointer;              
     }
 
-    &__btn__icon { fill: $light-txt-color; width: 24px; height: 24px; }
+    &__btn__icon { 
+      fill: $light-txt-color; 
+      width: 24px; 
+      height: 24px; 
+    }
   }
 }
