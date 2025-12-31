@@ -5,7 +5,7 @@
   padding-top: 200px;
   padding-bottom: 200px;
   background-image:
-    linear-gradient(to right, rgba(47, 48, 58, .4), rgba(47, 48, 58, .4)),
+    linear-gradient(to right, $hero-overlay, $hero-overlay),
     url("../imgs/mobile/hero.jpg");
   background-size: cover;
   background-position: center;
@@ -15,14 +15,12 @@
   @media (min-width: $bp-tablet)  { @include mix.bg-src(tablet,  hero, jpg); }
   @media (min-width: $bp-desktop) { @include mix.bg-src(desktop, hero, jpg); }
 
-  &__container {
-    text-align: center;
-  }
+  &__container { text-align: center; }
 
   &__title {
     font-size: 44px;
     font-weight: 900;
-    line-height: 60px;
+    line-height: 1.36;
     letter-spacing: .06em;
     text-transform: uppercase;
     color: $light-txt-color;
@@ -37,110 +35,176 @@
     border-radius: 4px;
     font-weight: 700;
     letter-spacing: .06em;
-    line-height: 30px;
+    line-height: 1.88;
     font-size: 16px;
     font-family: $font-base;
+    cursor: pointer;
+    display: inline-block;
     box-shadow: 0 4px 4px rgba(0, 0, 0, .15);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      background-color: #188ce8;
+    }
   }
 
+  /* ===== MODAL ===== */
   &__modal {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 528px;
-    height: 581px;
+    min-height: 581px;
     padding: 40px;
     background-color: $light-txt-color;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
     box-shadow:
       0 2px 1px rgba(0, 0, 0, .2),
       0 1px 1px rgba(0, 0, 0, .14),
       0 1px 3px rgba(0, 0, 0, .12);
-    border-radius: 16px;
+    border-radius: 4px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
     &__close__btn {
       position: absolute;
       top: 8px;
       right: 8px;
+      width: 30px;
+      height: 30px;
       background-color: transparent;
-      padding: 6px;
-      border-radius: 50%;
       border: 1px solid rgba(0, 0, 0, .1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      color: rgba(0, 0, 0, 1);
+      transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+      &:hover,
+      &:focus {
+        color: $main-color;
+      }
     }
 
     &__title {
+      font-weight: 700;
       font-size: 20px;
-      padding-bottom: 12px;
+      line-height: 1.15;
+      text-align: center;
+      letter-spacing: .03em;
+      color: $titles-color;
+      margin-bottom: 12px;
     }
 
     &__form {
-      padding-bottom: 20px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
     }
 
     &__label {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      color: $desc-color;
       text-align: left;
+      margin-bottom: 10px;
       font-size: 12px;
+      line-height: 1.16;
       letter-spacing: .01em;
+      color: $desc-color;
+      display: block;
+      position: relative;
     }
 
     &__input {
+      width: 100%;
       border: 1px solid rgba(33, 33, 33, .2);
       border-radius: 4px;
-      height: 40px;
-      transition: border-color .2s ease;
+      padding: 11px 16px 11px 42px;
+      margin-top: 4px;
+      outline: none;
+      transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-      &:hover {
-        border-color: $main-color;
+      &::placeholder {
+        color: rgba(117, 117, 117, .5);
+        font-size: 12px;
+        letter-spacing: .01em;
       }
 
-      &:hover + .hero__modal__label__icon {
-        fill: $main-color;
+      &:hover,
+      &:focus {
+        border-color: $main-color;
       }
     }
 
     &__label__icon {
       position: absolute;
-      fill: $titles-color;
+      left: 12px;
+      top: 29px;
       width: 18px;
       height: 18px;
-      left: 52px;
+
+      fill: currentColor;
+      color: $titles-color;
+      transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: none;
+    }
+
+    &__label:hover &__label__icon,
+    &__label:focus-within &__label__icon {
+      color: $main-color;
+    }
+
+    &__input:hover + &__label__icon,
+    &__input:focus + &__label__icon {
+      color: $main-color;
     }
 
     &__textarea {
+      width: 100%;
+      height: 120px;
       border: 1px solid rgba(33, 33, 33, .2);
       border-radius: 4px;
       padding: 12px 16px;
-      width: 448px;
-      height: 120px;
+      margin-top: 4px;
       resize: none;
+      outline: none;
+
+      font-size: 12px;
+      line-height: 1;
+      letter-spacing: .01em;
+
+      transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
       &::placeholder {
         color: rgba(117, 117, 117, .5);
-        letter-spacing: .01em;
         font-size: 12px;
+        letter-spacing: .01em;
+      }
+
+      &:hover,
+      &:focus {
+        border-color: $main-color;
       }
     }
 
     &__wrapper {
       display: flex;
-      gap: 7px;
+      align-items: center;
       justify-content: center;
+      gap: 7px;
+      margin-top: 10px;
+      margin-bottom: 30px;
     }
 
     &__checkbox {
-      border: 2px solid $titles-color;
+      cursor: pointer;
+      accent-color: $main-color;
     }
 
     &__desc {
       font-size: 14px;
-      line-height: 23px;
+      line-height: 1.71;
+      letter-spacing: .03em;
       color: $desc-color;
 
       &__link {
@@ -150,48 +214,64 @@
     }
 
     &__btn {
-      margin-top: 30px;
-      background-color: $main-color;
-      border-radius: 4px;
-      border: 0;
-      padding: 10px 52px;
-      color: $light-txt-color;
-      font-size: 16px;
-      line-height: 30px;
-      letter-spacing: .06em;
-      font-weight: 700;
-      box-shadow: 0 4px 4px rgba(0, 0, 0, .15);
       align-self: center;
-      display: inline-block;
+      min-width: 200px;
+      padding: 10px 52px;
+
+      background-color: $main-color;
+      color: $light-txt-color;
+      border: 0;
+      border-radius: 4px;
+
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1.88;
+      letter-spacing: .06em;
+
+      cursor: pointer;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, .15);
+      transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+      &:hover,
+      &:focus {
+        background-color: #188ce8;
+      }
     }
   }
 }
 
 .backdrop {
   position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, .4);
-  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .2);
+  z-index: 100;
+
   opacity: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  visibility: visible;
+  pointer-events: auto;
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &.is__hidden {
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
   }
 }
 
+.backdrop.is__hidden .hero__modal {
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
 .no__scroll { overflow: hidden; }
 
+/* SVG хрестик */
 .close__icon {
   width: 18px;
   height: 18px;
-  fill: rgba(0, 0, 0, 1);
-  transition: fill .2s ease;
-
-  &:hover {
-    fill: $main-color;
-  }
+  fill: currentColor;
 }

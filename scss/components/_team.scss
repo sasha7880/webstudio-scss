@@ -1,5 +1,26 @@
 @use '../utils/variables' as *;
 
+/* ===== BENEFITS (вирівнює 4 елементи рівномірно, контейнер НЕ чіпаємо) ===== */
+.benefits {
+  &__container {
+    display: flex;
+  }
+
+  &__list {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    flex: 1;
+  }
+
+  &__item {
+    width: auto; // прибрати width:270px (якщо було)
+    flex: 0 1 calc((100% - 90px) / 4);
+    min-width: 0;
+  }
+}
+
+/* ===== TEAM (твій код) ===== */
 .team {
   background-color: $background-team;
   padding-bottom: 94px;
@@ -16,17 +37,21 @@
 
   &__list {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
     gap: 30px;
+    justify-content: center;
   }
 
   &__item {
     background-color: $color-bg;
-    width: 270px;
+    flex-basis: calc((100% - 90px) / 4);
+    max-width: 270px;
+
     display: flex;
-    flex-wrap: nowrap;
-    text-align: center;
     flex-direction: column;
+    text-align: center;
+    flex-wrap: nowrap;
+
     box-shadow:
       0 2px 1px 0 rgba(0,0,0,.2),
       0 1px 1px 0 rgba(0,0,0,.14),
@@ -34,7 +59,7 @@
     border: 0;
     border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px;
-    
+
     &__list {
       padding-bottom: 30px;
       display: flex;
@@ -62,8 +87,10 @@
   }
 
   &__img {
-    width: 270px;
+    width: 100%;
     height: 260px;
+    display: block;
+    object-fit: cover;
   }
 
   &__desc {
@@ -86,7 +113,7 @@
   &__icon {
     width: 20px;
     height: 20px;
-    fill: $color-muted;        
+    fill: $color-muted;
     transition: fill .25s ease;
   }
 }

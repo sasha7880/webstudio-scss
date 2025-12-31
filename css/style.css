@@ -1,7 +1,9 @@
+@charset "UTF-8";
 .header {
   background-color: rgb(255, 255, 255);
   border-bottom: 1px solid rgb(238, 238, 238);
-  padding: 24px 0;
+  padding-top: 24px;
+  padding-bottom: 25px;
   position: relative;
 }
 .header__container {
@@ -28,23 +30,19 @@
   display: flex;
   gap: 50px;
 }
-.header__list {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
-.header__item {
-  display: flex;
-}
 .header__item__link {
-  position: relative;
   display: inline-block;
+  position: relative;
+  text-decoration: none;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.02em;
   color: rgb(33, 33, 33);
-  text-decoration: none;
   transition: color 0.25s ease;
+}
+.header__item__link:hover, .header__item__link:focus-visible {
+  color: rgb(33, 150, 243);
+  outline: none;
 }
 .header__item__link::after {
   content: "";
@@ -59,28 +57,34 @@
   opacity: 0;
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
-.header__item__link:hover, .header__item__link:focus-visible {
+.header {
+  /* Активна сторінка */
+}
+.header .current__page {
   color: rgb(33, 150, 243);
-  outline: none;
 }
-.header__item__link:hover::after, .header__item__link:focus-visible::after {
+.header .current__page::after {
   transform: translateX(-50%) scaleX(1);
   opacity: 1;
 }
-.header__item__link.current__page::after, .header__item__link.portfolio__current__page::after {
-  transform: translateX(-50%) scaleX(1);
-  opacity: 1;
+.header__list {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.header__item {
+  display: flex;
 }
 .header__link {
   display: flex;
   align-items: center;
   gap: 9px;
   white-space: nowrap;
+  text-decoration: none;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.02em;
   color: #757575;
-  text-decoration: none;
   transition: color 0.25s ease;
 }
 .header__link:hover, .header__link:focus-visible {
@@ -98,7 +102,7 @@
 .hero {
   padding-top: 200px;
   padding-bottom: 200px;
-  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../imgs/desktop/main-page/hero.jpg");
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("../imgs/mobile/hero.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -135,7 +139,7 @@
 .hero__title {
   font-size: 44px;
   font-weight: 900;
-  line-height: 60px;
+  line-height: 1.36;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: rgb(255, 255, 255);
@@ -149,114 +153,147 @@
   border-radius: 4px;
   font-weight: 700;
   letter-spacing: 0.06em;
-  line-height: 30px;
+  line-height: 1.88;
   font-size: 16px;
   font-family: "Roboto", sans-serif;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   cursor: pointer;
+  display: inline-block;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.hero__overlay {
-  background-color: rgba(47, 48, 58, 0.4);
-  padding-top: 200px;
-  padding-bottom: 200px;
+.hero__button:hover, .hero__button:focus {
+  background-color: #188ce8;
 }
-.hero__img {
-  display: block;
+.hero {
+  /* ===== MODAL ===== */
 }
 .hero__modal {
   position: absolute;
   top: 50%;
   left: 50%;
   width: 528px;
-  height: 581px;
+  min-height: 581px;
   padding: 40px;
   background-color: rgb(255, 255, 255);
-  transform: translate(-50%, -50%);
-  box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14);
-  border-radius: 16px;
+  transform: translate(-50%, -50%) scale(1);
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero__modal__close__btn {
   position: absolute;
-  bottom: 543px;
-  left: 490px;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
   background-color: transparent;
-  padding: 6px;
-  border-radius: 100%;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  color: rgb(0, 0, 0);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hero__modal__close__btn:hover, .hero__modal__close__btn:focus {
+  color: rgb(33, 150, 243);
 }
 .hero__modal__title {
+  font-weight: 700;
   font-size: 20px;
-  padding-bottom: 12px;
-  position: relative;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: rgb(33, 33, 33);
+  margin-bottom: 12px;
 }
 .hero__modal__form {
-  padding-bottom: 20px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 .hero__modal__label {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  color: rgb(117, 117, 117);
   text-align: left;
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  color: rgb(117, 117, 117);
+  display: block;
+  position: relative;
+}
+.hero__modal__input {
+  width: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding: 11px 16px 11px 42px;
+  margin-top: 4px;
+  outline: none;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hero__modal__input::placeholder {
+  color: rgba(117, 117, 117, 0.5);
   font-size: 12px;
   letter-spacing: 0.01em;
 }
-.hero__modal__input {
-  position: relative;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
-  height: 40px;
-  transition: border-color 0.2s ease;
-}
-.hero__modal__input:hover {
+.hero__modal__input:hover, .hero__modal__input:focus {
   border-color: rgb(33, 150, 243);
-}
-.hero__modal__input.phone {
-  position: static;
-  top: auto;
-  left: auto;
-}
-.hero__modal__input:hover + .hero__modal__label__icon {
-  fill: rgb(33, 150, 243);
 }
 .hero__modal__label__icon {
   position: absolute;
-  fill: rgb(33, 33, 33);
+  left: 12px;
+  top: 29px;
   width: 18px;
   height: 18px;
-  left: 52px;
-  top: 100px;
+  fill: currentColor;
+  color: rgb(33, 33, 33);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+.hero__modal__label:hover .hero__modal__label__icon, .hero__modal__label:focus-within .hero__modal__label__icon {
+  color: rgb(33, 150, 243);
+}
+.hero__modal__input:hover + .hero__modal__label__icon, .hero__modal__input:focus + .hero__modal__label__icon {
+  color: rgb(33, 150, 243);
 }
 .hero__modal__textarea {
+  width: 100%;
+  height: 120px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   padding: 12px 16px;
-  width: 448px;
-  height: 120px;
+  margin-top: 4px;
   resize: none;
+  outline: none;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero__modal__textarea::placeholder {
   color: rgba(117, 117, 117, 0.5);
-  letter-spacing: 0.01em;
   font-size: 12px;
+  letter-spacing: 0.01em;
+}
+.hero__modal__textarea:hover, .hero__modal__textarea:focus {
+  border-color: rgb(33, 150, 243);
 }
 .hero__modal__wrapper {
   display: flex;
-  gap: 7px;
+  align-items: center;
   justify-content: center;
+  gap: 7px;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 .hero__modal__checkbox {
-  border: 2px solid rgb(33, 33, 33);
-  padding: 4px 2px 3px 3px;
-  background-color: rgb(33, 150, 243);
+  cursor: pointer;
+  accent-color: rgb(33, 150, 243);
 }
 .hero__modal__desc {
   font-size: 14px;
-  line-height: 23px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
   color: rgb(117, 117, 117);
 }
 .hero__modal__desc__link {
@@ -264,57 +301,57 @@
   text-decoration: underline;
 }
 .hero__modal__btn {
-  margin-top: 30px;
-  background-color: rgb(33, 150, 243);
-  border-radius: 4px;
-  border: 0;
-  padding: 10px 52px;
-  color: rgb(255, 255, 255);
-  font-size: 16px;
-  line-height: 30px;
-  letter-spacing: 0.06em;
-  font-weight: 700;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   align-self: center;
-  display: inline-block;
+  min-width: 200px;
+  padding: 10px 52px;
+  background-color: rgb(33, 150, 243);
+  color: rgb(255, 255, 255);
+  border: 0;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
   cursor: pointer;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hero__modal__btn:hover, .hero__modal__btn:focus {
+  background-color: #188ce8;
 }
 
 .backdrop {
   position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 100;
   opacity: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop.is__hidden {
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
+}
+
+.backdrop.is__hidden .hero__modal {
+  transform: translate(-50%, -50%) scale(0.9);
 }
 
 .no__scroll {
   overflow: hidden;
 }
 
+/* SVG хрестик */
 .close__icon {
   width: 18px;
   height: 18px;
-  fill: rgb(0, 0, 0);
-  transition: fill 0.2s ease;
-}
-.close__icon:hover {
-  fill: rgb(33, 150, 243);
-}
-
-.e__mail {
-  top: 231px;
-}
-
-.phone {
-  top: 166px;
+  fill: currentColor;
 }
 
 :root {
@@ -554,6 +591,23 @@
   color: rgb(255, 255, 255);
 }
 
+/* ===== BENEFITS (вирівнює 4 елементи рівномірно, контейнер НЕ чіпаємо) ===== */
+.benefits__container {
+  display: flex;
+}
+.benefits__list {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  flex: 1;
+}
+.benefits__item {
+  width: auto;
+  flex: 0 1 calc((100% - 90px) / 4);
+  min-width: 0;
+}
+
+/* ===== TEAM (твій код) ===== */
 .team {
   background-color: rgb(245, 244, 250);
   padding-bottom: 94px;
@@ -569,16 +623,18 @@
 }
 .team__list {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   gap: 30px;
+  justify-content: center;
 }
 .team__item {
   background-color: #ffffff;
-  width: 270px;
+  flex-basis: calc((100% - 90px) / 4);
+  max-width: 270px;
   display: flex;
-  flex-wrap: nowrap;
-  text-align: center;
   flex-direction: column;
+  text-align: center;
+  flex-wrap: nowrap;
   box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
   border: 0;
   border-bottom-right-radius: 4px;
@@ -606,8 +662,10 @@
   fill: rgb(255, 255, 255);
 }
 .team__img {
-  width: 270px;
+  width: 100%;
   height: 260px;
+  display: block;
+  object-fit: cover;
 }
 .team__desc {
   color: rgb(117, 117, 117);
@@ -670,11 +728,10 @@
   gap: 9px;
 }
 .footer__address__item {
-  color: rgb(255, 255, 255);
   font-size: 14px;
   font-weight: 400;
   line-height: 1.71;
-  letter-spacing: 0.03em;
+  color: rgb(255, 255, 255);
 }
 .footer__address__link {
   color: rgba(255, 255, 255, 0.6);
@@ -682,6 +739,10 @@
   line-height: 1.71;
   font-weight: 400;
   letter-spacing: 0.03em;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer__address__link:hover, .footer__address__link:focus {
+  color: rgb(33, 150, 243);
 }
 .footer__wrapper {
   padding-top: 12px;
@@ -734,7 +795,7 @@
   border-radius: 4px;
   padding: 15px 171px 15px 16px;
   background-color: transparent;
-  color: rgb(255, 255, 255);
+  color: rgba(255, 255, 255, 0.6);
   font-size: 16px;
   line-height: 20px;
   letter-spacing: 0.03px;
@@ -841,8 +902,8 @@
   margin: 0 auto;
 }
 .advertisements__list {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 30px;
   list-style: none;
   margin: 0;
@@ -854,23 +915,13 @@
   border-radius: 4px;
   overflow: hidden;
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
-  flex-direction: column;
   text-align: start;
-  flex-basis: calc((100% - 90px) / 3);
+  flex-basis: calc((100% - 60px) / 3);
+  max-width: 370px;
 }
 .advertisements__item:hover {
   border-color: transparent;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08), 0 12px 24px rgba(0, 0, 0, 0.06);
-}
-.advertisements__link {
-  display: block;
-  height: 100%;
-  color: inherit;
-  text-decoration: none;
-  background: #fff;
-}
-.advertisements__link:hover .advertisements__overlay, .advertisements__link:focus-visible .advertisements__overlay {
-  transform: translateY(0);
 }
 .advertisements__thumb {
   position: relative;
@@ -905,9 +956,7 @@
   color: #2e2f42;
   text-transform: none;
   overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  white-space: nowrap;
 }
 .advertisements__subtitle {
   margin: 0 24px 20px;
@@ -916,6 +965,10 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.vsi {
+  padding: 10px 25px;
 }
 
 html,
